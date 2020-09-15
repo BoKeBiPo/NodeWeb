@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../public/javascripts/jquery-1.8.2.min.js"></script>
+    <script src="../../public/javascripts/vue.js"></script>
+</head>
+<body>
+<!--这是我们的View-->
+<div id="app">
+    <p>{{ message }}</p>
+    <input type="text" v-model="message" />
+    <h1>Hello, Vue.js!</h1>
+    <h1 v-if="yes">Yes!</h1>
+    <h1 v-if="no">No!</h1>
+    <h1 v-if="age >= 25">Age: {{ age }}</h1>
+    <h1 v-if="name.indexOf('jack') >= 0">Name: {{ name }}</h1>
+</div>
+</body>
+<script>
+    import Vue from 'Vue';
+    Vue.config.debug = true;//开启错误提示
+
+
+    // 这是我们的Model
+    var exampleData = {
+        message: 'Hello World!',
+        yes: true,
+        no: false,
+        age: 28,
+        name: 'keepfooljack'
+    }
+    window.onload = function () {
+        new Vue({
+            el: '#app',
+            data: exampleData
+        });
+
+    }
+</script>
+
+</html>
